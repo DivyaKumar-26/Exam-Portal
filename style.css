@@ -1,1 +1,373 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #0a1f44;
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #ff6f61;
+    position: relative;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+}
+
+/* Navigation Links */
+#nav-links {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+#nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+#nav-links a:hover {
+    color: #ff6f61;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #0a1f44;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    #nav-links a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #fff;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+#nav-links a:hover {
+    color: #ff6f61;
+}
+
+/* Hamburger Icon for Mobile */
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;  /* Adjust to move hamburger to top */
+    left: 10px;  /* Adjust to move hamburger to left */
+    z-index: 100; /* Ensure it's on top of other elements */
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    /* Show hamburger on small screens */
+    .hamburger {
+        display: flex;  /* Display the hamburger button */
+    }
+
+    /* Hide the nav links by default on small screens */
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #0a1f44;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Show the nav when the 'active' class is added */
+    #nav-links.active {
+        display: flex;
+    }
+
+    /* Style for nav links inside the dropdown */
+    #nav-links a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #fff;
+        color: white;
+        text-decoration: none;
+    }
+
+    .header nav {
+        display: none;
+    }
+}
+
+
+
+/* Main Section */
+main {
+    padding: 60px 10%;
+    text-align: center;
+    flex-grow: 1;
+}
+
+#features {
+    margin-bottom: 50px;
+}
+
+#features h2 {
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+    font-weight: 700;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0a1f44;
+    font-weight: 700;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Button */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #0a1f44;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff6f61;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #0a1f44, #4e74e0);
+    color: white;
+    padding: 20px 5%;
+    margin-top: 60px;
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.footer-section {
+    width: 45%;
+    margin-bottom: 15px;
+}
+
+.footer-section h3, .footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #ff6f61;
+    text-transform: uppercase;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ff6f61;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0 5px;
+    font-size: 12px;
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer-section h3, .footer-section h4 {
+        font-size: 16px;
+    }
+
+    .footer-section p {
+        font-size: 12px;
+    }
+
+    .footer-section a {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        font-size: 10px;
+    }
+}
+
+/* Footer Fix for iPad Pro */
+footer {
+    background: linear-gradient(135deg, #0a1f44, #4e74e0);
+    color: white;
+    padding: 20px 5%;
+    border-radius: 8px 8px 0 0;
+    margin-top: 60px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Query Fix for iPad Pro */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    footer {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
 
