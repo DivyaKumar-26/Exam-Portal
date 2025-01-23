@@ -3,11 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Test Platform</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="header">
+        <!-- Container for Logo and Text -->
+        <div class="logo-text-container">
+            <!-- Logo Image -->
+            <img src="image.png" alt="NSS JEE Cell Logo">
+            
+            <!-- Header Text -->
+            <div id="header">
+                <b><span class="small-text">NSS JEE CELL<br>IIT ROORKEE</span></b>
+            </div>
+        </div>
+
+        <!-- Hamburger Button -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     
-    <script src="script.js"></script>
+        <!-- Navigation Links -->
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div id="features">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Realistic Test Interface</h3>
+                    <p>Mimic real exam environment and get comfortable for the actual exam.</p>
+                </div>
+                <div class="feature">
+                    <h3>Detailed Performance Analysis</h3>
+                    <p>Track your progress with insightful charts and question-wise performance data.</p>
+                </div>
+                <div class="feature">
+                    <h3>Test History & Bookmarks</h3>
+                    <p>Access previous tests, answer keys, and important bookmarked questions.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>NSS JEE Cell, IIT Roorkee</h3>
+                <p>At NSS JEE, we aim to provide JEE aspirants with a reliable platform that enhances their exam preparation. Our focus is on offering intuitive tools, realistic test environments, and valuable insights. We strive to simplify the learning process and help students track their progress. Our goal is to empower every aspirant to achieve their full potential and succeed. </p>
+            </div>
+
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="details.html">Features</a></li>
+                    <li><a href="join.html">Whatsapp Group</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 NSS JEE Cell, IIT Roorkee ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Wait for the DOM to fully load before executing the script
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+
+            // Function to toggle the menu visibility
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+            }
+
+            // Attach event listener to the hamburger button
+            hamburger.addEventListener('click', toggleMenu);
+        });
+    </script>
 </body>
 </html>
-
