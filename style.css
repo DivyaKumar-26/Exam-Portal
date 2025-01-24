@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* Body Styling */
@@ -16,17 +17,61 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+.logo-text-container {
+    display: flex;
+    align-items: center;
+    background-color: #0A1F44;
+    padding: 5px 15px; /* Reduced padding to make the enclosure smaller */
+    border-radius: 30px; /* Adjusted curve for a tighter fit */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 2px solid #ff6f61; /* Border with theme color */
+}
 
-/* Header */
+.logo-text-container img {
+    height: 40px;
+    margin-right: 10px; 
+}
+
+#header {
+    font-size: 16px; 
+    color: #FF6F61; 
+}
+
+.small-text {
+    font-size: 14px;
+}
+
+
+
 .header {
     background-color: #0a1f44;
-    color: white;
+    color: #ff6f61;
     padding: 20px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 4px solid #ff6f61;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Logo and Text in the Same Row */
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 50px; /* Adjust this size according to your logo's height */
+    margin-right: 15px; /* Space between the logo and the text */
+}
+
+.header-logo h1 {
+    color: #FF6F61; /* Text color updated to #FF6F61 */
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
 }
 
 /* Hamburger Icon */
@@ -34,10 +79,10 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 10px;
     z-index: 100;
+    position: absolute;
+    top: 10px; /* Distance from the top of the page */
+    left: 10px; /* Distance from the left of the page */
 }
 
 .hamburger div {
@@ -45,7 +90,41 @@ body {
     height: 3px;
     background-color: white;
     margin: 4px;
+    transition: all 0.3s ease;
 }
+
+.hamburger:hover div {
+    background-color: #ff6f61;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #0a1f44;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        border-top: 2px solid #ff6f61;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    #nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid #fff;
+    }
+}
+
 
 /* Navigation Links */
 #nav-links {
@@ -59,7 +138,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 #nav-links a:hover {
@@ -81,6 +160,7 @@ body {
         left: 0;
         width: 100%;
         text-align: center;
+        border-top: 2px solid #ff6f61;
     }
 
     #nav-links.active {
@@ -88,75 +168,10 @@ body {
     }
 
     #nav-links a {
-        display: block;
         padding: 15px;
         border-bottom: 1px solid #fff;
-        color: white;
-        text-decoration: none;
     }
 }
-
-
-#nav-links a:hover {
-    color: #ff6f61;
-}
-
-/* Hamburger Icon for Mobile */
-.hamburger {
-    display: none; /* Hidden on larger screens */
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;  /* Adjust to move hamburger to top */
-    left: 10px;  /* Adjust to move hamburger to left */
-    z-index: 100; /* Ensure it's on top of other elements */
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px;
-}
-
-/* Mobile Menu */
-@media (max-width: 768px) {
-    /* Show hamburger on small screens */
-    .hamburger {
-        display: flex;  /* Display the hamburger button */
-    }
-
-    /* Hide the nav links by default on small screens */
-    #nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #0a1f44;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Show the nav when the 'active' class is added */
-    #nav-links.active {
-        display: flex;
-    }
-
-    /* Style for nav links inside the dropdown */
-    #nav-links a {
-        display: block;
-        padding: 15px;
-        border-bottom: 1px solid #fff;
-        color: white;
-        text-decoration: none;
-    }
-
-    .header nav {
-        display: none;
-    }
-}
-
 
 
 /* Main Section */
@@ -173,8 +188,9 @@ main {
 #features h2 {
     margin-bottom: 40px;
     font-size: 36px;
-    color: #333;
+    color: #0a1f44;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .feature-grid {
@@ -186,7 +202,7 @@ main {
 .feature {
     background-color: #ffffff;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
@@ -228,14 +244,18 @@ main {
     transform: translateY(-3px);
 }
 
+.btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.5);
+}
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, #0a1f44, #4e74e0);
     color: white;
-    padding: 20px 5%;
+    padding: 30px 5%;
     margin-top: 60px;
     border-radius: 8px 8px 0 0;
-    width: 100%;
     box-sizing: border-box;
 }
 
@@ -249,7 +269,6 @@ footer {
 
 .footer-section {
     width: 45%;
-    margin-bottom: 15px;
 }
 
 .footer-section h3, .footer-section h4 {
@@ -261,8 +280,8 @@ footer {
 }
 
 .footer-section p {
-    margin-bottom: 10px;
     font-size: 14px;
+    color: #eee;
 }
 
 .footer-section ul {
@@ -278,17 +297,16 @@ footer {
     color: white;
     text-decoration: none;
     font-size: 14px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
     color: #ff6f61;
-    transform: translateX(5px);
 }
 
 .footer-bottom {
     text-align: center;
-    padding: 15px 0 5px;
+    padding: 15px 0;
     font-size: 12px;
     color: white;
 }
@@ -298,11 +316,6 @@ footer {
     .header {
         flex-direction: column;
         text-align: center;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
     }
 
     .feature-grid {
@@ -317,38 +330,7 @@ footer {
 
     .footer-section {
         width: 100%;
-        margin-bottom: 10px;
     }
-
-    .footer-section h3, .footer-section h4 {
-        font-size: 16px;
-    }
-
-    .footer-section p {
-        font-size: 12px;
-    }
-
-    .footer-section a {
-        font-size: 12px;
-    }
-
-    .footer-bottom {
-        font-size: 10px;
-    }
-}
-
-/* Footer Fix for iPad Pro */
-footer {
-    background: linear-gradient(135deg, #0a1f44, #4e74e0);
-    color: white;
-    padding: 20px 5%;
-    border-radius: 8px 8px 0 0;
-    margin-top: 60px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    min-height: 100px;
-    box-sizing: border-box;
 }
 
 /* Slide-down animation */
@@ -362,12 +344,26 @@ footer {
         opacity: 1;
     }
 }
+@media (max-width: 768px) {
+    .logo-text-container {
+        padding: 5px 10px;  /* Reduced padding */
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Media Query Fix for iPad Pro */
-@media (min-width: 1024px) and (max-width: 1366px) {
-    footer {
-        margin-bottom: 0;
-        padding-bottom: 0;
+    .logo-text-container img {
+        height: 30px;  /* Adjust the logo size */
+    }
+
+    #header {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+        flex-direction: column;
+        text-align: center;
     }
 }
 
