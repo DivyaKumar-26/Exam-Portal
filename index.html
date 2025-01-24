@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Platform</title>
+    <meta name="description" content="NSS JEE Cell IIT Roorkee provides a reliable test platform to help JEE aspirants prepare effectively.">
+    <meta name="keywords" content="JEE, IIT Roorkee, Test Platform, NSS, Preparation, Exam">
+    <meta name="author" content="NSS JEE Cell, IIT Roorkee">
+    <title>NSS JEE Test Platform</title>
     
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <!-- Container for Logo and Text -->
+    <!-- Header Section -->
+    <header class="header">
         <div class="logo-text-container">
-            <!-- Logo Image -->
-            <img src="image.png" alt="NSS JEE Cell Logo">
-            
-            <!-- Header Text -->
-            <div id="header">
-                <b><span class="small-text">NSS JEE CELL<br>IIT ROORKEE</span></b>
+            <!-- Logo -->
+            <img src="image.png" alt="NSS JEE Cell Logo" class="logo-img" aria-label="NSS JEE Cell Logo">
+
+            <!-- Logo Text -->
+            <div id="header" class="header-text">
+                <span class="small-text">NSS JEE CELL<br>IIT ROORKEE</span>
             </div>
         </div>
 
-        <!-- Hamburger Button -->
-        <div class="hamburger" id="hamburger">
+        <!-- Hamburger Button for Mobile Menu -->
+        <div class="hamburger" id="hamburger" aria-label="Menu Toggle">
             <div></div>
             <div></div>
             <div></div>
@@ -35,12 +40,15 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="join.html">Join Us</a></li>
             </ul>
         </nav>
-    </div>
+    </header>
 
+    <!-- Main Content Section -->
     <main>
-        <div id="features">
+        <section id="features">
             <h2>Key Features</h2>
             <div class="feature-grid">
                 <div class="feature">
@@ -56,28 +64,29 @@
                     <p>Access previous tests, answer keys, and important bookmarked questions.</p>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
+    <!-- Footer Section -->
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
                 <h3>NSS JEE Cell, IIT Roorkee</h3>
-                <p>At NSS JEE, we aim to provide JEE aspirants with a reliable platform that enhances their exam preparation. Our focus is on offering intuitive tools, realistic test environments, and valuable insights. We strive to simplify the learning process and help students track their progress. Our goal is to empower every aspirant to achieve their full potential and succeed. </p>
+                <p>At NSS JEE, we aim to provide JEE aspirants with a reliable platform that enhances their exam preparation. Our focus is on offering intuitive tools, realistic test environments, and valuable insights. We strive to simplify the learning process and help students track their progress. Our goal is to empower every aspirant to achieve their full potential and succeed.</p>
             </div>
 
             <div class="footer-section links">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="details.html">Features</a></li>
-                    <li><a href="join.html">Whatsapp Group</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="join.html">Whatsapp Group</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 NSS JEE Cell, IIT Roorkee ALL RIGHTS RESERVED</p>
+            <p>&copy; 2025 NSS JEE Cell, IIT Roorkee. ALL RIGHTS RESERVED</p>
         </div>
     </footer>
 
@@ -95,6 +104,8 @@
 
             // Attach event listener to the hamburger button
             hamburger.addEventListener('click', toggleMenu);
+            hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active') ? 'true' : 'false');
+
         });
     </script>
 </body>
